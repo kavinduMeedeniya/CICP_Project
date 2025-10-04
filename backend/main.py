@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import os
 from backend.preprocess import preprocess_input
@@ -18,13 +17,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# ----------------------------
-# Backend API routes
-# ----------------------------
-
-# Root route for testing API
-@app.get("/api")
-async def root_api():
+# Root route for testing
+@app.get("/")
+async def root():
     return {"message": "Insurance Prediction API is live!"}
 
 # Input schema for prediction
@@ -47,7 +42,7 @@ class PolicyHolder(BaseModel):
     PAST_ACCIDENTS: int
 
 # Prediction endpoint
-@app.post("/api/predict")
+@app.post("/predict")
 async def predict_claim(data: PolicyHolder):
     try:
         data_dict = data.dict()
@@ -58,7 +53,7 @@ async def predict_claim(data: PolicyHolder):
         return {"error": str(e)}
 
 # List available figure files
-@app.get("/api/visualizations")
+@app.get("/visualizations")
 async def get_visualizations():
     figures_dir = os.path.join("outputs", "figures")
     try:
@@ -69,18 +64,9 @@ async def get_visualizations():
         return {"figures": [], "error": "Figures directory not found"}
 
 # Serve individual figure file
-@app.get("/api/figures/{filename}")
+@app.get("/figures/{filename}")
 async def get_figure(filename: str):
     file_path = os.path.join("outputs", "figures", filename)
     if os.path.exists(file_path):
         return FileResponse(file_path)
     return {"error": "File not found"}
-
-# ----------------------------
-# Serve React frontend
-# ----------------------------
-
-# Make sure frontend build is at: backend/build
-# Correct — points to the build folder inside backend
-app.mount("/", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "build"), html=True), name="frontend")
-
