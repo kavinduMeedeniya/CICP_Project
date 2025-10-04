@@ -3,7 +3,12 @@
     padding: 0%;
     font-family: sans-serif;
 }
-.insurepredict-hero {
+
+.ip-main-container {
+    width: 100%;
+}
+
+.ip-hero-section {
     min-height: 100vh;
     position: relative;
     display: flex;
@@ -13,48 +18,59 @@
     padding: 40px 20px;
     overflow: hidden;
     background-color: #000;
+    /* Add your background image here */
+    background-image: url('https://i.postimg.cc/fWdZsJjK/moaaz-baig-S3bx-Q6i-N2n-E-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Dark overlay to ensure text visibility */
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-.insurepredict-vanta-bg {
+.ip-hero-section::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+    z-index: 1;
 }
 
-.insurepredict-hero-content {
+.ip-hero-content-wrapper {
     position: relative;
     z-index: 10;
     text-align: center;
     max-width: 1000px;
 }
 
-.insurepredict-hero-title {
+.ip-main-headline {
     font-size: clamp(40px, 8vw, 80px);
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: -1px;
     color: rgb(0, 213, 255);
     margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Text shadow for better visibility */
 }
 
-.insurepredict-hero-title span {
+.ip-main-headline span {
     font-weight: 600;
 }
 
-.insurepredict-content-section {
+.ip-content-section {
     background: linear-gradient(to bottom, rgb(238, 238, 238), rgba(255, 255, 255, 1));
     padding: 80px 20px;
 }
 
-.insurepredict-company-header {
+.ip-company-header-section {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.insurepredict-steps {
+.ip-action-buttons-group {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -62,7 +78,7 @@
     flex-wrap: wrap;
 }
 
-.insurepredict-step-btn {
+.ip-primary-action-btn {
     padding: 10px 24px;
     border: 1px solid #000;
     background: transparent;
@@ -76,12 +92,12 @@
     transition: all 0.3s;
 }
 
-.insurepredict-step-btn:hover {
+.ip-primary-action-btn:hover {
     background: #000;
     color: white;
 }
 
-.insurepredict-about-btn {
+.ip-secondary-action-btn {
     padding: 12px 32px;
     background: #000;
     color: white;
@@ -96,13 +112,13 @@
     transition: all 0.3s;
 }
 
-.insurepredict-about-btn:hover {
+.ip-secondary-action-btn:hover {
     background: #333;
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.insurepredict-company-title {
+.ip-platform-title {
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
@@ -111,7 +127,7 @@
     margin-bottom: 50px;
 }
 
-.insurepredict-description {
+.ip-platform-description {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
@@ -122,7 +138,7 @@
     margin-bottom: 60px;
 }
 
-.insurepredict-features {
+.ip-features-grid {
     display: flex;
     gap: 40px;
     justify-content: center;
@@ -130,7 +146,7 @@
     margin-top: 40px;
 }
 
-.insurepredict-feature {
+.ip-feature-item {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -139,11 +155,15 @@
 }
 
 @media (max-width: 768px) {
-    .insurepredict-hero-title {
+    .ip-main-headline {
         font-size: 36px;
     }
 
-    .insurepredict-description {
+    .ip-platform-description {
         font-size: 16px;
+    }
+    
+    .ip-features-grid {
+        gap: 20px;
     }
 }

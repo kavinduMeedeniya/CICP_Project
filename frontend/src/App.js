@@ -4,6 +4,7 @@ import ClaimForm from './components/ClaimForm';
 import ResultsDisplay from './components/ResultsDisplay';
 import InsurePredict from './comp/InsurePredict';
 import CertificatePredictionPlatform from './comp/CertificatePredictionPlatform';
+import KT2SInsurance from './comp/KT2SInsurance';
 //import Visualizations from './components/Visualizations'; // if need you can add 
 
 function App() {
@@ -40,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <KT2SInsurance/>
       <InsurePredict />
       
       {error && <p style={{ color: 'red' }}>{error}</p>}
