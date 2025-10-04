@@ -3,20 +3,26 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 import os
-from backend.preprocess import preprocess_input  # Absolute import
-from backend.predict import predict  # Absolute import
+from backend.preprocess import preprocess_input
+from backend.predict import predict
 
 app = FastAPI()
 
-# CORS middleware to allow frontend requests
+# CORS middleware (allow all origins for deployment; change later to your frontend URL)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],  
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+# Root route for testing
+@app.get("/")
+async def root():
+    return {"message": "Insurance Prediction API is live!"}
+
+# Input schema for prediction
 class PolicyHolder(BaseModel):
     AGE: str
     GENDER: str
@@ -35,6 +41,7 @@ class PolicyHolder(BaseModel):
     DUIS: int
     PAST_ACCIDENTS: int
 
+# Prediction endpoint
 @app.post("/predict")
 async def predict_claim(data: PolicyHolder):
     try:
@@ -45,18 +52,21 @@ async def predict_claim(data: PolicyHolder):
     except Exception as e:
         return {"error": str(e)}
 
+# List available figure files
 @app.get("/visualizations")
 async def get_visualizations():
+    figures_dir = os.path.join("outputs", "figures")
     try:
-        figures = os.listdir('../outputs/figures')
+        figures = os.listdir(figures_dir)
         figures = [f for f in figures if f.endswith('.png')]
         return {"figures": figures}
     except FileNotFoundError:
         return {"figures": [], "error": "Figures directory not found"}
 
+# Serve individual figure file
 @app.get("/figures/{filename}")
 async def get_figure(filename: str):
-    file_path = os.path.join('../outputs/figures', filename)
+    file_path = os.path.join("outputs", "figures", filename)
     if os.path.exists(file_path):
         return FileResponse(file_path)
     return {"error": "File not found"}
