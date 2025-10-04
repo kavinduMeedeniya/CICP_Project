@@ -15,7 +15,7 @@ function App() {
   const handlePredict = (formData) => {
     setError(null);
     console.log('Sending to backend:', JSON.stringify(formData)); // Debug input
-    fetch('http://127.0.0.1:8000/predict', {
+    fetch('https://insurance-innovator-kt2s.onrender.com/predict', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
