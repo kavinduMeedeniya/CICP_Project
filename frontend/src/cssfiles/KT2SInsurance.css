@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.KT2S-body {
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.KT2S-container {
+    width: 100%;
+    text-align: center;
+}
+
+.KT2S-badge {
+    display: inline-block;
+    background: #0060b5;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 5%;
+    animation: KT2S-fadeInDown 0.8s ease;
+}
+
+.KT2S-availability {
+    color: #ffffff;
+    font-size: 12px;
+    margin-left: 8px;
+}
+
+.KT2S-headline {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+    animation: KT2S-fadeInUp 0.8s ease;
+}
+
+.KT2S-headline strong {
+    font-weight: 600;
+    color: #000;
+}
+
+.KT2S-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: KT2S-fadeInUp 0.8s ease 0.2s backwards;
+}
+
+.KT2S-cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 60px;
+    animation: KT2S-fadeInUp 0.8s ease 0.4s backwards;
+}
+
+.KT2S-btn {
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.KT2S-btn-primary {
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+}
+
+.KT2S-btn-primary:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.KT2S-btn-secondary {
+    background: transparent;
+    color: #000;
+    border: 2px solid #ddd;
+}
+
+.KT2S-btn-secondary:hover {
+    background: #f8f9fa;
+    border-color: #000;
+    transform: translateY(-2px);
+}
+
+.KT2S-image-section {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: KT2S-fadeIn 1s ease 0.6s backwards;
+}
+
+.KT2S-image-container {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.KT2S-image-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+}
+
+.KT2S-image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.KT2S-image-description {
+    margin-top: 20px;
+    color: #666;
+    font-size: 0.9rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+}
+
+@keyframes KT2S-fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes KT2S-fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes KT2S-fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .KT2S-headline {
+        font-size: 2.5rem;
+    }
+
+    .KT2S-subtitle {
+        font-size: 1rem;
+    }
+
+    .KT2S-cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .KT2S-image-section {
+        max-width: 100%;
+    }
+}
