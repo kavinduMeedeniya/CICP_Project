@@ -9,11 +9,11 @@ const KT2SInsurance = () => {
             </div>
 
             <h1 className="KT2S-headline">
-                Anticipating claims <strong>through<br />intelligent AI systems</strong>
+                Anticipating claims <strong>through<br />intelligent systems</strong>
             </h1>
 
             <p className="KT2S-subtitle">
-                Harness the power of AI to accurately forecast insurance claims and<br /> transform risk into strategy
+                Harness the power to accurately forecast insurance claims and<br /> transform risk into strategy.
             </p>
 
             <div className="KT2S-cta-buttons">
@@ -29,7 +29,7 @@ const KT2SInsurance = () => {
                     />
                 </div>
                 <p className="KT2S-image-description">
-                    Move beyond reactive models. Our AI delivers unparalleled accuracy in forecasting insurance claims.
+                    Move beyond reactive models. Our system delivers unparalleled accuracy in forecasting insurance claims.
                 </p>
             </div>
         </div>
