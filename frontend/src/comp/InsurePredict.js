@@ -15,7 +15,7 @@ const InsurePredict = () => {
                 </div>
 
                 <p className="ip-platform-description">
-                    Our cutting-edge AI platform analyzes insurance certificate data to predict claim likelihood with unprecedented accuracy. Using machine learning algorithms and historical data patterns, we help insurance companies mitigate risk, optimize pricing, and improve customer service through proactive claim management.
+                    Our cutting-edge  platform analyzes insurance certificate data to predict claim likelihood with unprecedented accuracy. Using machine learning algorithms and historical data patterns, we help insurance companies mitigate risk, optimize pricing, and improve customer service through proactive claim management.
                 </p>
 
                 <div className="ip-features-grid">

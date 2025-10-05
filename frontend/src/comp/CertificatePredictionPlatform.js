@@ -9,16 +9,16 @@ const CertificatePredictionPlatform = () => {
                     <div className="fdm_footer_header">
                         <div className="fdm_footer_label">Overview</div>
                         <h1 className="fdm_footer_title">
-                            Advanced Certificate Claim Prediction Platform leverages AI and machine learning to forecast insurance claims with unprecedented accuracy
+                            Advanced Certificate Claim Prediction Platform leverages  and machine learning to forecast insurance claims with unprecedented accuracy
                         </h1>
                         <div className="fdm_footer_subtitle">Transforming risk assessment through predictive analytics</div>
                     </div>
 
                     <div className="fdm_footer_grid">
                         <div className="fdm_footer_card">
-                            <div className="fdm_footer_card_title">AI-Powered Predictions</div>
+                            <div className="fdm_footer_card_title">Data-Driven Predictions</div>
                             <div className="fdm_footer_card_description">
-                                Our platform utilizes advanced machine learning algorithms to analyze historical data and predict future certificate claims with over 90% accuracy.
+                                Our platform utilizes advanced data analysis algorithms to examine historical trends and predict future certificate claims with over 90% accuracy.
                             </div>
                         </div>
 
